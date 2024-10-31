@@ -6,8 +6,8 @@ ARG GO_VERSION="1.23.2"
 ARG ALPINE_VERSION="3.20"
 ARG DART_SASS_VERSION="1.79.3"
 
-FROM --platform=$BUILDPLATFORM tonistiigi/xx:1.5.0 AS xx
-FROM --platform=$BUILDPLATFORM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS gobuild
+FROM --platform=linux/amd64 tonistiigi/xx:1.5.0 AS xx
+FROM --platform=linux/amd64 golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS gobuild
 FROM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS gorun
 
 
